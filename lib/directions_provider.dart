@@ -17,6 +17,12 @@ class DirectionsProvider extends ChangeNotifier {
   //var v1 = Location (-16.503167, -68.137649);
   //way.add(v1);
 
+
+  var way = <Waypoint> [
+    new Waypoint('via:-16.506651%2C-68.139742'),
+    new Waypoint('via:-16.506134%2C-68.141026'),
+  ];
+
 //-16.503167, -68.137649
   findDirectons(maps.LatLng from, maps.LatLng to) async {
     var origin = Location(from.latitude, from.longitude);
@@ -26,7 +32,7 @@ class DirectionsProvider extends ChangeNotifier {
       origin,
       destination,
       travelMode: TravelMode.driving,
-      //waypoints: way,
+      waypoints: way,
     );
     // http.Response result = await http.get(
     //     'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&key=API_KEY');
